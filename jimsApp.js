@@ -1,3 +1,34 @@
+Router.configure({
+  layoutTemplate: 'layout'
+});
+
+Router.map(function () {
+  this.route('home', {
+    path: '/',
+    template: 'select_view'
+  });
+
+  this.route('customer', {
+    path: 'customer',
+    template: 'view_customer'
+  });
+
+  this.route('order', {
+    path: 'order',
+    template: 'view_order'
+  });
+
+  this.route('queue', {
+    path: '/queue',
+    template: 'view_queue'
+  });
+
+  this.rout('scan', {
+    path: '/scan',
+    template: 'view_scan'
+  });
+});
+
 if (Meteor.isClient) {
 
 //  Template.select_view.is_selected_view = function (view) {

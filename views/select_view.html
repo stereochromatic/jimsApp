@@ -1,0 +1,12 @@
+<!-- views/select_view.html -->
+<template name="select_view">
+	<div class="masthead">
+       	<h3 class="text-muted">JimsApp v0.1</h3>
+       	<ul class="nav nav-justified">
+       		<li {{{is_selected_view 'queue'}}}><a id="select_queue">View Work Queue</a></li>
+       		<li {{{is_selected_view 'order'}}}><a id="select_order">Create an Order</a></li>
+       		<li {{{is_selected_view 'customer'}}}><a id="select_customer">Add a Customer</a></li>
+       		<li {{{is_selected_view 'scan'}}}><a id="select_scan">Station Scanner</a></li>
+        </ul>
+    </div>
+</template>

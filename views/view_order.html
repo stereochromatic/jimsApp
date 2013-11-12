@@ -1,0 +1,33 @@
+<!-- views/view_order.html -->
+<template name="view_order">
+  <div class="container">
+    {{> select_view}}
+	<div class="jumbotron">
+      <h2>Please enter a new Order</h2>
+          <form role="form">
+            <div class="form-group">
+              <label for="part">Part Number</label>
+              <input type="text" class="form-control" id="part" placeholder="Part Number">
+            </div>
+            <div class="form-group">
+              <label for="due">Due Date</label>
+              <input type="date" class="form-control" id="due" placeholder="Due Date">
+            </div>
+            <div class="form-group">
+              <label for="due">Lot Size</label>
+              <input type="lot" class="form-control" id="lot" placeholder="Lot Size (QTY)">
+            </div>
+            <div class="form-group">
+              <label for="customer">Customer</label>
+              <select class="form-control" id="customer">
+                <option>PJ</option>
+                <option>Jim</option>
+                <option>Jamie</option>
+                <option>Chrissy</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+          </form>
+    </div>
+  </div>
+</template>
