@@ -23,8 +23,7 @@ Router.map(function () {
     template: 'view_queue'
   });
 
-  this.route('scan', {
-    path: '/scan',
+  this.route('scan', {path: '/scan',
     template: 'view_scan'
   });
 });
