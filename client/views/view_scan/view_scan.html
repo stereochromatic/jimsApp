@@ -1,1 +1,17 @@
+<template name="view_scan">
+	<div>
 
+		{{> view_select_views}}
+
+    	<div class="jumbotron">
+    		<h2>Scan Your Router Sheet Code</h2>
+            	<form role="form">
+        	    <div class="form-group">
+    	        	<label for="part">Part Number</label>
+	            	<input type="text" class="form-control" id="part" placeholder="Part Number" value="	2211985">
+    	        </div>
+    	        <button type="submit" class="btn btn-primary">Scan Code</button>
+    	    </form>
+    	</div>
+  	</div>
+</template>
