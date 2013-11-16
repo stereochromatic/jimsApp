@@ -2,6 +2,7 @@
 <template name="view_queue">
 	
     {{> view_select_views}}
+    
     <div class="jumbotron">
    		<table class="table table-striped">
       		<thead>
@@ -20,36 +21,23 @@
        				</th>
       			</thead>
       			<tbody>
-        			<tr>
-       					<td>
-           					2211985
-       					</td>         					
-       					<td>
-            				11/15/13
+              {{#each orders}}
+        			  <tr>
+       				    <td>
+           		 		  {{ this.part_number}}
+       				 	  </td>         					
+       				 	  <td>
+            			  {{ this.due_date }}
           				</td>
           				<td>
-           					500/box
-       					</td>
-       					<td>
-            				1
-          				</td>
-        			</tr>
-       				<tr>
-          				<td>
-           					2211955
-       					</td>
-       					<td>
-          					11/20/13        					
-          				</td>
-          				<td>
-            				300/box
-          				</td>
-          				<td>
-           					4
-       					</td>
-      				</tr>
-   				</tbody>
+           				  {{ this.quantity }}
+       					  </td>
+       					  <td>
+            			  {{ this.station }}
+          			  </td>
+        			  </tr>
+              {{/each}}
+   				  </tbody>
 			</table>
 		</div>
-  
 </template>
