@@ -1,5 +1,5 @@
 Template.view_order.customers = function () {
-	return Customer.prototype.load_all();
+	return Customer.prototype.load();
 };
 
 Template.view_order.events(okCancelEvents('#create_order', {
