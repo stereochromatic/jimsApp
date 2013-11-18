@@ -4,13 +4,27 @@
 
     	<div class="jumbotron">
     		<h2>Scan Your Router Sheet Code</h2>
-            	<form role="form">
+            	<form role="form" id="scanner">
         	    <div class="form-group">
-    	        	<label for="part">Part Number</label>
-	            	<input type="text" class="form-control" id="part" placeholder="Part Number" value="	2211985">
+                    <label for="order">Order</label>
+                    <select class="form-control" id="order">
+                        {{#each orders}}
+                            <option value="{{ this }}">
+                                {{ this.part_number }}
+                            </option>
+                        {{/each}}
+                    </select>
     	        </div>
-    	        <button type="submit" class="btn btn-primary">Scan Code</button>
+    	        <div class="form-group">
+                    <label for="station">Station</label>
+                    <select class="form-control" id="station">
+                        {{#each stations}}
+                            <option value="{{ this }}">
+                                {{ this.name }}
+                            </option>
+                        {{/each}}
+                    </select>
+                </div>
     	    </form>
-    	</div>
-  	
+    	</div>	
 </template>
