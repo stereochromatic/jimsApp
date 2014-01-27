@@ -1,0 +1,15 @@
+{
+  "name": "teresa",
+  "version": "0.10.22",
+  "description": "high tech",
+  "main": "index.js",
+  "dependencies": {
+    "n": "~1.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD-2-Clause"
+}

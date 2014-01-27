@@ -1,0 +1,40 @@
+<template name="materialsForm">
+   <div class="container">  
+    <fieldset>
+    <legend>Quick Add</legend>
+    <form>
+        <div>
+            <label>
+                Material Number:
+                <input id="material_number" />
+            </label>
+        </div>
+        <div>
+            <label>
+                Quantity:
+                <input id="material_qty" />
+            </label>
+        </div>
+        <div>
+            <label>
+                Supplier
+                <select class="form-control" id="supplier">
+                    {{#each customers}}
+                  <option>{{customer_name}}</option>
+                    {{/each}}
+                </select>
+            </label>
+        </div>
+        <div>
+            <label>
+                Comment:
+                <input id="comment" />
+            </label>
+        </div>
+        <div>
+            <input type="submit" value="Add Material" />
+        </div>
+    </form>
+    </fieldset>
+</div>
+</template>

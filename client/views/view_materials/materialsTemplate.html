@@ -1,0 +1,44 @@
+<template name="materialsTemplate">
+<div class="container">  
+
+<!-- Inventory Table -->
+
+<div class="jumbotron">
+  <h2> On-Hand Inventory </h2>
+    <table class="table table-striped" div class="pagination">
+      <thead>
+        <tr>
+          <th>
+          Part #
+          </th>
+        <th>
+          On-Hand Quantity
+        </th>
+        <th>
+        	Actions
+        </th>
+      </thead>
+      <tbody>
+      	{{#each materials}}
+        <tr>
+          <td>
+            {{material_number}}
+          </td>
+          <td>
+            {{material_qty}}
+          </td>
+          <td>
+          	<input type="button" value="X" class="delete" />
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+
+    </table>
+
+</div>
+  </div>
+  <!-- End of Container-->
+</template>
+
+

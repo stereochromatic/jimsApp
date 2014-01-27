@@ -1,0 +1,68 @@
+<template name="materialsLog">
+<div class="container">  
+
+    <!-- Inventory Log Table -->
+
+<div class="jumbotron">
+  <h2>Inventory Log</h2>
+    <table class="table table-striped" id="pageLog">
+      <thead>
+        <tr>
+          <th>
+          Part #
+          </th>
+        <th>
+          Quantity +/-
+        </th>
+        <th>
+          Timestamp
+        </th>
+        <th>
+          Name
+        </th>
+         <th>
+          Supplier
+        </th>
+                <th>
+          Comments
+        </th>
+        <th>
+        	Actions
+        </th>
+      </thead>
+      <tbody>
+      	{{#each materialsLog}}
+        <tr>
+          <td>
+            {{log_number}}
+          </td>
+          <td>
+            {{qty_added}}
+          </td>
+                    <td>
+            {{time}}
+          </td>
+                    <td>
+            {{name}}
+          </td>
+                    <td>
+            {{supplier}}
+          </td>
+                    <td>
+            {{comment}}
+          </td>
+          <td>
+          	<input type="button" value="X" class="delete" />
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+
+    </table>
+
+</div>
+  </div>
+  <!-- End of Container-->
+</template>
+
+

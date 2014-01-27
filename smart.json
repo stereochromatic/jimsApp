@@ -1,0 +1,9 @@
+{
+  "packages": {
+    "iron-router": {},
+    "datatables": {},
+    "moment": {},
+    "roles": {},
+    "bootstrap-3": {}
+  }
+}

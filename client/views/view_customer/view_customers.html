@@ -1,0 +1,39 @@
+<!-- client/views/view_queue.html -->
+<template name="view_customers">
+	
+    {{> view_select_views}}
+    
+    <div class="jumbotron">
+   		<table class="table table-striped">
+      		<thead>
+        		<tr>
+       				<th>
+          				Name
+       				</th>          				
+       				<th>
+            			Address	
+        			</th>
+        			<th>
+       					Phone
+       				</th>
+
+      			</thead>
+      			<tbody>
+              {{#each customers}}
+        			  <tr>
+       				    <td>
+           		 		 <a> {{ this.name}} </a>
+       				 	  </td>         					
+       				 	  <td>
+            			  {{ this.address }}
+          				</td>
+          				<td>
+           				  {{ this.phone }}
+       					  </td>
+
+        			  </tr>
+              {{/each}}
+   				  </tbody>
+			</table>
+		</div>
+</template>

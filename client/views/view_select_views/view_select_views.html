@@ -1,0 +1,14 @@
+<!-- client/views/view_select_views.html -->
+<template name="view_select_views">
+	<div class="masthead">
+       	<ul class="nav nav-justified">
+       		<li><a id="select_queue" href="/queue">Queue</a></li>
+       		<li><a id="select_scan" href="/scan">Check-In</a></li>
+       		{{#if isInRole 'admin'}}
+       		<li><a id="select_order" href="/order">Create Order</a></li>
+       		<li><a id="select_customer" href="/customer">Customers</a></li>
+			    <li><a id="select_materials" href="/materials">Inventory</a></li>
+			{{/if}}
+        </ul>
+    </div>
+</template>

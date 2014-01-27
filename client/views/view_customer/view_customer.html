@@ -1,0 +1,130 @@
+<!-- client/views/view_customer.html -->
+<template name="view_customer">
+	
+    {{> view_select_views}}
+    
+    <div class="jumbotron">
+      <h2>Please enter a new Customer</h2>
+      <form role="form" id="create_customer">
+        <div class="form-group">
+          <label for="customer">Customer</label>
+          <input type="text" class="form-control" id="customer" placeholder="Customer Name">
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input type="text" class="form-control" id="address" placeholder="Customer Address">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="text" class="form-control" id="phone" placeholder="Customer Phone #">
+        </div>
+        <div class="form-group">
+          <label for="cell">Cell</label>
+          <input type="text" class="form-control" id="cell" placeholder="Customer Cell">
+        </div>
+        <div class="form-group">
+          <label for="email">E-Mail</label>
+          <input type="text" class="form-control" id="email" placeholder="Customer Email">
+        </div>
+        <div class="form-group">
+          <label for="website">Website</label>
+          <input type="text" class="form-control" id="website" placeholder="Customer Website">
+        </div>
+        <div class="form-group">
+          <label for="contact">Contact Person</label>
+          <input type="text" class="form-control" id="contact" placeholder="Contact Person">
+        </div>
+        <div class="form-group">
+          <label for="shipping">Shipping Instructions</label>
+          <input type="text" class="form-control" id="shipping" placeholder="Shipping Instructions">
+        </div>
+        <div class="form-group">
+            <label for="customer_type">Type</label>
+                <select class="form-control" id="customer_type">
+                  <option>Customer</option>
+                  <option>Supplier</option>
+                  <option>Both</option>
+                </select>
+        </div>
+         <!-- <button class="submit" class="btn btn-success">Submit</button>-->
+      </form><button class="btn btn-large btn-success" id="submit">Submit</button>
+      <!-- End of Customer Input Form -->
+    </div>
+
+{{#if isInRole 'admin'}}
+    <div class="jumbotron">
+      <h2>Customer List (Admin Only)</h2>
+      <table class="table table-striped" id="cust">
+          <thead>
+            <tr>
+              <th>
+                  Name
+              </th>                 
+              <th>
+                  Address 
+              </th>
+              <th>
+                Phone
+              </th>
+              <th>
+                Cell
+              </th>
+              <th>
+                Email
+              </th>
+              <th>
+                Website
+              </th>
+              <th>
+                Contact
+              </th>
+              <th>
+                Shipping
+              </th>
+              <th>
+                Type
+              </th>
+              <!--<th>
+                Actions
+              </th>-->
+            </thead>
+            <tbody>
+              {{#each customers}}
+                <tr>
+                  <td>
+                   <a> {{ this.name}} </a>
+                  </td>                   
+                  <td>
+                    {{ this.address }}
+                  </td>
+                  <td>
+                    {{ this.phone }}
+                  </td>
+                   <td>
+                    {{ this.cell }}
+                  </td>
+                  <td>
+                    {{ this.email }}
+                  </td>                  
+                  <td>
+                    {{ this.website }}
+                  </td>
+                  <td>
+                    {{ this.contact }}
+                  </td>
+                  <td>
+                    {{ this.shipping }}
+                  </td>
+                  <td>
+                    {{ this.customer_type }}
+                  </td>
+                  <!--<td>
+                    <input type="button" value="X" class="delete" />
+                  </td>-->
+                </tr>
+              {{/each}}
+            </tbody>
+      </table><br><br>
+    </div>
+    {{/if}}
+</template>

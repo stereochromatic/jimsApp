@@ -1,0 +1,75 @@
+<!-- client/views/view_queue.html -->
+<template name="view_queue">
+	
+    {{> view_select_views}}
+    
+    <div class="jumbotron">
+      <small>
+   		<table class="table table-striped table-condensed" id="q">
+      		<thead>
+        		<tr>
+              <th>
+                Customer
+              </th>
+             <th>
+                  Purchase Order
+              </th>          
+       				<th>
+          				Part #
+       				</th>          				
+       				<th>
+            			Due Date		
+        			</th>
+        			<th>
+       					Quantity
+       				</th>
+       				<th>
+       					Current Station        				
+       				</th>
+              <th>
+                Amount at Station            
+              </th>
+              <th>
+                Last Scan             
+              </th>
+              <th>
+                Scanned By             
+              </th>
+      			</thead>
+      			<tbody>
+              {{#each orders}}
+        			  <tr class="order_detail">
+                   <td>
+                    {{ this.customer }}
+                  </td>
+                  <td>
+                   {{ this.purchase_order}}
+                  </td>        
+       				    <td>
+           		 		 {{ this.part_number}}
+       				 	  </td>         					
+       				 	  <td>
+            			  {{ this.due_date }}
+          				</td>
+          				<td>
+           				  {{ this.quantity }}
+       					  </td>
+       					  <td>
+            			  {{ this.station }}
+          			  </td>
+                  <td>
+                    {{ this.last_qty }}
+                  </td>
+                  <td>
+                    {{ this.last_scan }}
+                  </td>
+                  <td>
+                    {{ this.name }}
+                  </td>
+        			  </tr>
+              {{/each}}
+   				  </tbody>
+			</table><br>
+    </small>
+		</div>
+</template>

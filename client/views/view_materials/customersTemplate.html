@@ -1,0 +1,44 @@
+<template name="customersTemplate">
+<div class="container">  
+
+<!-- Inventory Table -->
+
+<div class="jumbotron">
+  <h2> Customers / Suppliers</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>
+          Customer Name
+          </th>
+        <th>
+          Phone
+        </th>
+        <th>
+        	Actions
+        </th>
+      </thead>
+      <tbody>
+      	{{#each customers}}
+        <tr>
+          <td>
+            {{customer_name}}
+          </td>
+          <td>
+            {{customer_phone}}
+          </td>
+          <td>
+          	<input type="button" value="X" class="delete" />
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+
+    </table>
+
+</div>
+  </div>
+  <!-- End of Container-->
+</template>
+
+

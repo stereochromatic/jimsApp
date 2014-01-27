@@ -1,0 +1,39 @@
+<template name="view_scan">
+
+	{{> view_select_views}}
+
+   	<div class="jumbotron">
+   		<h2>Check-In Item</h2>
+           	<form role="form" id="scanner">
+       	    <div class="form-group">
+                <label for="order">Order</label>
+                <select class="form-control" id="order">
+                    <option>Select an Order</option>
+                    {{#each orders}}
+                        <option value="{{this}}">
+                           {{ this.part_number }}
+                        </option>
+                    {{/each}}
+                </select>
+            </div>
+	        <div class="form-group">
+                <label for="station">Station</label>
+                <select class="form-control" id="station">
+                    <option>Select a Station</option>
+                    {{#each stations}}
+                        <option value="{{this.name}}">
+                            {{ this.name }}
+                        </option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="form-group">
+                <label>
+                    Quantity<br>
+                    <input id="scan_qty" class="form-control" />
+                </label>
+            </div>
+            <button class="btn btn-large btn-success" id="submit">Submit</button>
+    	    </form>
+    	</div>
+</template>
