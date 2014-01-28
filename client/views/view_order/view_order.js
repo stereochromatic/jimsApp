@@ -17,6 +17,14 @@ Template.view_order.materialsLog = function () {
     return MaterialsLog.find();
 };
 
+Template.view_order.isNotFirstPart = function () {
+    //TODO do this, maybe?
+    return true;
+};
+
+Template.view_order.rendered = function () {
+  $('#ord').dataTable({"bPaginate": false, "bRetrieve" :true});
+};
 
 Template.view_order.events( {
 	'click input.delete': function () {
@@ -66,10 +74,4 @@ Template.view_order.events( {
         //try adding to log
         MaterialsLog.insert(newLog);
 	}
-} );
-
-
-
-Template.view_order.rendered = function () {
-  $('#ord').dataTable({"bPaginate": false, "bRetrieve" :true});
-};
+});
