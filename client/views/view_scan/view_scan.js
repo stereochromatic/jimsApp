@@ -3,8 +3,7 @@
 var order_selected, station_selected;
 
 Template.view_scan.orders = function () {
-
-	return Order.prototype.load()
+	return Orders.find();
 };
 
 Template.view_scan.stations = function () {
@@ -27,7 +26,16 @@ Template.view_scan.rendered = function () {
 		"bScrollCollapse": false,});
 };
 
-
+Template.view_scan.btnClass = function () {
+	var qty = (JSON.parse(order.value) || {quantity: 0}).quantity;
+	if (scan_qty.value < qty) {
+		return 'btn-default';
+	} else if (scan_qty === qty) {
+		return 'btn-success';
+	} else {
+		return 'btn-danger';
+	}
+}
 
 Template.view_scan.events( {
 
@@ -36,11 +44,9 @@ Template.view_scan.events( {
 		
 		if ( station.value ) {
 			station_selected = new Station( Stations.findOne( { name : station.value } ) );
-		}
-		else if ( station ) {
+		} else if ( station ) {
 			station_selected = new Station( Stations.findOne( { name : station } ) );
-		}
-		else {
+		} else {
 			station_selected = undefined;
 		}
 
