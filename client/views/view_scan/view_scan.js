@@ -20,28 +20,29 @@ Template.view_scan.parts = function () {
 }
 
 Template.view_scan.part = function () {
-	var parts = Template.view_scan.parts();
-	var part = _.filter(parts, function (part) {
-		return part.id == order.value;
-	})[0];
-	return part; 
+	   console.log('part updated');
+	if (Template.view_scan.is_rendered()) {
+	    var parts = Template.view_scan.parts();
+	    var part = _.filter(parts, function (part) {
+		    return part.id == order.value;
+	    })[0];
+	    return part; 
+	}
+	return void 0;
 }
-	
-Template.view_scan.btnClass = function () {
+
+Template.view_scan.btnClass = function (part) {
 	console.log('btnClass called');
-	console.log(JSON.stringify($('#order')));
-	/* var part = Orders.findOne({parts: {$elemMatch: {id: order.value}}});
-	console.log(part);
-	if ($('#order') && order.value) {
-		var qty = (JSON.parse(order.value) || {quantity: 0}).quantity;
-		if (scan_qty.value < qty) {
-			return 'btn-default';
-		} else if (scan_qty === qty) {
-			return 'btn-success';
-		} else {
-			return 'btn-danger';
-		}		
-	} */
+	console.log('looking up part...');
+	console.log(part); 
+	        
+	if (part) {
+    	if (scan_qty.value < Number(part.quantity)) {
+		    return 'btn-default';
+	    } else if (scan_qty === part.quantity) {
+		    return 'btn-success';
+	   	}
+	} 
 	return 'btn-danger';
 };
 
@@ -53,11 +54,18 @@ Template.view_scan.scanLog = function () {
     return ScanLog.find();
 };
 
+var is_rendered = false;
 Template.view_scan.rendered = function () {
-  $('#sclog').dataTable({"bPaginate": false,"bAutoWidth": false,		
+    console.log('rendered');
+    is_rendered = true; 
+    $('#sclog').dataTable({"bPaginate": false,"bAutoWidth": false,		
   		"sScrollX":       "100%",
 		"sScrollXInner":  "150%",
 		"bScrollCollapse": false,});
+};
+
+Template.view_scan.is_rendered = function () {
+  return is_rendered;  
 };
 
 Template.view_scan.events( {

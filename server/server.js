@@ -50,8 +50,8 @@ Meteor.startup(function () {
 //Roles.addUsersToRoles(Meteor.user().userId, 'admin');
 
 //Add users to roles 
-/*
-var users = [
+
+/*var users = [
       {name:"Brian Back",email:"bib@htei.com",roles:['admin']}
     ];
 

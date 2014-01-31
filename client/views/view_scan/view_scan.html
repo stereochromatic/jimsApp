@@ -8,7 +8,7 @@
        	    <div class="form-group">
                 <label for="order">Order</label>
                 <select class="form-control" id="order">
-                    <option value="undefined">Select an Order</option>
+                    <option value="">Select an Order</option>
                     {{#each parts}}
                        	<option value="{{this.id}}">
                           		{{ this.part_number }} - {{ this.station}}: {{ this.quantity }}
@@ -34,7 +34,7 @@
                 </label>
             </div>
             {{submitButton}}
-            <button class="btn btn-large {{{btnClass}}}" id="submit">Submit</button>
+            <button class="btn btn-large {{{btnClass part}}}" id="submit">Submit</button>
     	    </form>
     	</div>
 </template>

@@ -22,9 +22,9 @@ Template.view_order.isNotFirstPart = function () {
     return true;
 };
 
-Template.view_order.rendered = function () {
+/*Template.view_order.rendered = function () {
   $('#ord').dataTable({"bPaginate": false, "bRetrieve" :true});
-};
+};*/
 
 Template.view_order.events( {
 	'click input.delete': function () {
