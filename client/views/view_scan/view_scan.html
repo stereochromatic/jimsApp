@@ -8,10 +8,10 @@
        	    <div class="form-group">
                 <label for="order">Order</label>
                 <select class="form-control" id="order">
-                    <option value="">Select an Order</option>
+                    <option>Select an Order</option>
                     {{#each parts}}
                        	<option value="{{this.id}}">
-                          		{{ this.part_number }} - {{ this.station}}: {{ this.quantity }}
+                          		{{ this.part_number }} - {{ this.station}}: {{ this.quantity }} ({{ this.last_qty }})
                        	</option>
                     {{/each}}
                 </select>
@@ -33,8 +33,7 @@
                     <input id="scan_qty" class="form-control" />
                 </label>
             </div>
-            {{submitButton}}
-            <button class="btn btn-large {{{btnClass part}}}" id="submit">Submit</button>
     	    </form>
+          <button class="btn btn-large btn-default" id="submit">Submit</button>
     	</div>
 </template>
